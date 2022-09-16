@@ -1,11 +1,11 @@
 ---
 - name: Let's copy our executable script to remote location, execute script and get result back.
   remote_user: root
-  hosts: all
+  hosts: 172.31.22.78
   tasks:
      - name: Transfer executable script script
-       copy: src=/home/ec2-user/hello.sh dest=/home/ec2-user mode=0777
-     - name: running the script file
-       command: sh /home/ec2-user/hello.sh
+       copy: src=/var/lib/jenkins/workspace/Pipeline/script.sh dest=/var/lib/jenkins/workspace/Pipeline mode=0777
+     - name: running the sript file
+       command: sh /var/lib/jenkins/workspace/Pipeline/script.sh
 ...
 
